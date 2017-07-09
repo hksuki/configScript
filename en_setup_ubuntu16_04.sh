@@ -4,7 +4,7 @@ CURRENTPATH=$(pwd)
 
 # 1. Install Binutils/Essentials/wget/git
 
-sudo apt-get install gcc gdb build-essential binutils binutils-powerpc-linux-gnu binutils-multiarch wget git
+sudo apt-get install -y gcc gdb build-essential binutils binutils-powerpc-linux-gnu binutils-multiarch wget git
 
 # 2. Install other dependencies
 
@@ -38,7 +38,7 @@ cd ../
 
 # 6. Install QEMU
 
-sudo apt-get install qemu qemu-system qemuctl qemu-system-mips qemu-system-misc qemu-system-ppc qemu-system-x86
+sudo apt-get install -y qemu qemu-system qemuctl qemu-system-mips qemu-system-misc qemu-system-ppc qemu-system-x86
 
 # Get other components for qemu
 
