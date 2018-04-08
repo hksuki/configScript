@@ -62,3 +62,13 @@ cd $CURRENTPATH
 # 7. Get Debian PowerPC Image
 
 wget https://people.debian.org/~aurel32/qemu/powerpc/debian_wheezy_powerpc_standard.qcow2
+
+# 8. Install oh_my_zsh
+
+sudo apt-get install -y zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# 9. Add i386
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libc6:i386 libstdc++6:i386
