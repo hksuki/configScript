@@ -16,15 +16,6 @@ sudo apt-get install -y ht hexedit
 
 # 4. Install dynamips & gdb stub
 
-git clone https://github.com/Groundworkstech/dynamips-gdb-mod
-cd dynamips-gdb-mod/src
-# Path to libelf is wrong, we need to change it
-cat Makefile | sed -e 's#/usr/lib/libelf.a#-lz -lelf /usr/lib/x86_64-linux-gnu/libelf.a#g' >Makefile.1
-mv Makefile Makefile.bak
-mv Makefile.1 Makefile
-# Complie it!
-DYNAMIPS_ARCH=amd64 make
-cd ../../
 
 # 5. Install pcalc(Programmer Caculator)
 
@@ -61,7 +52,6 @@ cd $CURRENTPATH
 
 # 7. Get Debian PowerPC Image
 
-wget https://people.debian.org/~aurel32/qemu/powerpc/debian_wheezy_powerpc_standard.qcow2
 
 # 8. Install oh_my_zsh
 
@@ -71,4 +61,4 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # 9. Add i386
 sudo dpkg --add-architecture i386
 sudo apt-get update
-sudo apt-get install libc6:i386 libstdc++6:i386
+sudo apt-get -y install libc6:i386 libstdc++6:i386
